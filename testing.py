@@ -10,10 +10,10 @@ query = {
     "api_key": api_key.api_key,
     "maxCorpusCount": -1,
     "minDictionaryCount": 1,
+    "maxDictionaryCount": -1,
     "minLength": 5,
     "maxLength": -1,
 }
-print(query.keys())
 
 response = requests.get(
     "https://api.wordnik.com/v4/words.json/randomWord", params=query
@@ -26,7 +26,6 @@ query = {'lat':'45', 'lon':'180'}
 response = requests.get('http://api.open-notify.org/iss-pass.json', params=query)
 print(response.json())
 """
-print(response.json())
+
 
 # GET https://wordsapiv1.p.mashape.com/words/{word}
-# https://www.macvendorlookup.com/api
