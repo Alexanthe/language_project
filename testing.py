@@ -27,5 +27,4 @@ response = requests.get('http://api.open-notify.org/iss-pass.json', params=query
 print(response.json())
 """
 
-
 # GET https://wordsapiv1.p.mashape.com/words/{word}
