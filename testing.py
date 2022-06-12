@@ -3,7 +3,7 @@ import requests
 import api_key
 from datetime import date, timedelta
 
-api_key.api_key
+# from wordDictExample import *
 
 today = date.today()
 
@@ -17,15 +17,32 @@ response = requests.get(
 
 wordDict = response.json()
 
-print(wordDict)
+# wordDict = wordDict
 
-print(wordDict["word"])
-print(wordDict["definitions"])  # Get list len and loop through
-print(wordDict["examples"])  # Get list len and loop through
-print(wordDict["pdd"])
-print(wordDict["note"])
+## Get Word ####
+word = wordDict["word"]
 
+## Get Definitions ####
+definitions = []
+for each in wordDict["definitions"]:
+    definitions.append(each)
 
+print(definitions)
+
+## Get Examples ####
+examples = []
+for each in wordDict["examples"]:
+    examples.append(each)
+
+print(len(examples))
+
+## Get Published Dates ####
+publishedDate = wordDict["pdd"]
+
+## Get Note ####
+note = wordDict["note"]
+
+## Using a different query api type ####
 # query = {
 #     "hasDictionaryDef": True,
 #     "api_key": api_key.api_key,
