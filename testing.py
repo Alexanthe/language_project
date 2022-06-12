@@ -27,14 +27,14 @@ definitions = []
 for each in wordDict["definitions"]:
     definitions.append(each)
 
-print(definitions)
+print(definitions) # Maybe can create a PY function to just get specified dictionary key values such as "text"
 
 ## Get Examples ####
 examples = []
 for each in wordDict["examples"]:
     examples.append(each)
 
-print(len(examples))
+print(len(examples)) # Cam create a py function to just get specific dictionary key values such as "text"
 
 ## Get Published Dates ####
 publishedDate = wordDict["pdd"]
