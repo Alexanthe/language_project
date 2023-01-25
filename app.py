@@ -16,3 +16,6 @@ def home_page():
 @app.route("/about")
 def about():
     return "About this project.."
+
+if (__name__) == "__main__":
+    app.run()
