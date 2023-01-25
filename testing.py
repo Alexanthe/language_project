@@ -22,6 +22,8 @@ wordDict = response.json()
 ## Get Word ####
 word = wordDict["word"]
 
+print(word)
+
 ## Get Definitions ####
 definitions = []
 for each in wordDict["definitions"]:
