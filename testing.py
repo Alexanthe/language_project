@@ -17,8 +17,6 @@ response = requests.get(
 
 wordDict = response.json()
 
-# wordDict = wordDict
-
 ## Get Word ####
 word = wordDict["word"]
 
@@ -29,7 +27,20 @@ definitions = []
 for each in wordDict["definitions"]:
     definitions.append(each)
 
-print(definitions) # Maybe can create a PY function to just get specified dictionary key values such as "text"
+# Function to get the different sources and texts definitions (Might have multiple definitions)
+def getSpecificDef(definitions):
+    source = [] 
+    text = []
+
+    for each in definitions:
+        source.append(each["source"])
+        text.append(each["text"])
+    
+    return source,text
+
+source,text = getSpecificDef(definitions)
+
+
 
 ## Get Examples ####
 examples = []
