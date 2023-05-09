@@ -10,8 +10,9 @@ app = Flask(__name__)
 @app.route("/home")
 def home_page():
     word = getWord(wordDict)
-    
-    return render_template("index.html", word=word)
+    source, text  = getDefinitions(wordDict)
+    example = getExamples(wordDict) # Create a function that can Extract text and title from dictionary in bee.py or have check jinja if can extract???
+    return render_template("index.html", wordhtml = word, texthtml = text)
 
 @app.route("/about")
 def about_page():

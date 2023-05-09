@@ -2,7 +2,17 @@
 
 {% block content %}
 <h1>{%block title%} Home {% endblock %}</h1>
-<h2>Word of the day: {{word}}</h2>
-<h3>Definition</h3>
+<div style="width: 50%; margin: auto">
+    <h2>Word of the day:</h2>
+    <div style="padding: 10px; background-color: #EEE; margin: 20px">
+        <p style="font-size: 24px">{{ wordhtml }}</p>
+    </div>
+    <h3>Definition</h3>
+    {% for text in texthtml %}
+    <div style="padding: 10px; background-color: #EEE; margin: 20px">
+        <p style="font-size: 18px">{{ text }}</p>
+    </div>
+    {% endfor %}
+</div>
 <h3>Interesting Phrases</h3>
 {% endblock %}
