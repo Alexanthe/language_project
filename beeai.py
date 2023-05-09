@@ -2,18 +2,6 @@ import requests
 import api_key
 from datetime import date, timedelta
 
-# today = date.today()
-
-# todayWordNik = today - timedelta(days=1)
-
-# query = {"date": todayWordNik, "api_key": api_key.api_key}
-
-# response = requests.get(
-#     "https://api.wordnik.com/v4/words.json/wordOfTheDay", params=query
-# )
-
-# wordDict = response.json()
-
 def getwordDict():
     today = date.today()
 
@@ -67,10 +55,3 @@ def getNote (wordDict):
     note = wordDict["note"]
 
     return note
-
-print(wordDict)
-
-example = getExamples(wordDict)
-print("1")
-print(example)
-print("2")
