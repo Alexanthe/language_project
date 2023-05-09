@@ -13,13 +13,13 @@
         <p style="font-size: 18px">{{ text }}</p>
     </div>
     {% endfor %}
+    <h3>Interesting Phrases</h3>
+    {% for example in examplehtml %}
+    <div style="padding: 10px; background-color: #EEE; margin: 20px">
+        <p style="font-size: 18px">{{ example["text"] }}</p>
+        <p> testing </p>
+    </div>
+    {% endfor %}
 </div>
-
-<h3>Interesting Phrases</h3>
-{% for example in examplehtml %}
-<div style="padding: 10px; background-color: #EEE; margin: 20px">
-    <p style="font-size: 18px">{{ example["text"] }}</p>
-</div>
-{% endfor %}
 
 {% endblock %}
