@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show More Example</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .text {
+            padding: 10px;
+            text-align: justify;
+            line-height: 1.5em;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="text">
+            <h2>Blade Runner (1982)</h2>
+            <p>Los Angeles, 2019. Humanity has reached new heights of technological prowess, but in the process has
+                caused irreversible damage to the environment and their own mental stability. Rick Deckard is a blade
+                runner, a cop who specializes in hunting down and "retiring" replicants, genetically-engineered beings
+                created to do the dangerous and degrading work that humans won't do. When four replicants escape from an
+                offworld colony and make their way to Earth, Deckard is called in to track them down.</p>
+            <p class="hide">Deckard's investigation leads him to a rogue replicant named Rachael, who is different from
+                the others because she doesn't know she's a replicant. As Deckard begins to fall in love with Rachael,
+                he must also confront the morality of his job and the existential implications of replicants that are
+                becoming more human than their creators.</p>
+        </div>
+    </div>
+
+    <button class="button" onclick="showMore()">Show More</button>
+
+    <script>
+        function showMore() {
+            var hiddenText = document.querySelector('.hide');
+            var buttonText = document.querySelector('.button');
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                buttonText.textContent = 'Show Less';
+            } else {
+                hiddenText.style.display = 'none';
+                buttonText.textContent = 'Show More';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
