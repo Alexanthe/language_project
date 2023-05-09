@@ -11,7 +11,8 @@ def home_page():
     word = getWord(wordDict)
     source, text  = getDefinitions(wordDict) #put source beside definition
     example = getExamples(wordDict) #put title beside text. 
-    return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example) 
+    publishedDate = getpublishedDate(wordDict)
+    return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example, publishedhtml = publishedDate) 
 
 @app.route("/about")
 def about_page():
