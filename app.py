@@ -1,18 +1,19 @@
 from flask import Flask, render_template
 from beeai import *
 
-#Retrive WordDict
-wordDict = getwordDict()
+
 
 app = Flask(__name__)
 
 @app.route("/")
 @app.route("/home")
 def home_page():
+    #Retrive WordDict
+    wordDict = getwordDict()
     word = getWord(wordDict)
-    source, text  = getDefinitions(wordDict)
-    example = getExamples(wordDict) # Create a function that can Extract text and title from dictionary in bee.py or have check jinja if can extract???
-    return render_template("index.html", wordhtml = word, texthtml = text)
+    source, text  = getDefinitions(wordDict) #put source beside definition
+    example = getExamples(wordDict) #put title beside text. 
+    return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example) #put title beside definition
 
 @app.route("/about")
 def about_page():
