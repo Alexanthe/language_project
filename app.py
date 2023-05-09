@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 from beeai import *
 
-
-
 app = Flask(__name__)
 
 @app.route("/")
