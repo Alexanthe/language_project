@@ -1,7 +1,47 @@
-a {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* a {
     color: Black;
 }
 
 body {
-    background-color: grey
+    background-color: grey;
+    font-family: Helvetica, Arial, sans-serif;
+
+    line-height: 1.6em;
+} */
+.navbar {
+    font-family: Helvetica, Arial, sans-serif;
+
+    line-height: 1.6em;
+}
+
+
+.outer-box {
+    width: 50%;
+    margin: auto;
+    font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.inner-box {
+    padding: 10px;
+    background-color: #EEE;
+    margin: 20px;
+    font-size: 18px;
+
+}
+
+.large-para {
+    text-align: center;
+    font-size: 24px
+}
+
+.normal-para {
+    font-size: 18px;
+    text-align: right;
+    padding-top: 5%;
 }

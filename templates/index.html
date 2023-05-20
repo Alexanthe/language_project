@@ -2,23 +2,24 @@
 
 {% block content %}
 <h1>{%block title%} Home {% endblock %}</h1>
-<div style="width: 50%; margin: auto">
-    <h2>Word of the day:</h2>
-    <p style="text-align: right"> Published Date: {{ publishedhtml }} </p>
-    <div style="padding: 10px; background-color: #EEE; margin: 20px">
-        <p style="text-align: center;font-size: 24px">{{ wordhtml }}</p>
+
+<div class="outer-box">
+    <h2>Word of the day</h2>
+    <p> Published Date: {{ publishedhtml }} </p>
+    <div class="inner-box">
+        <p class="large-para">{{ wordhtml }}</p>
     </div>
     <h3>Definition</h3>
     {% for text in texthtml %}
-    <div style="padding: 10px; background-color: #EEE; margin: 20px">
-        <p style="font-size: 18px">{{ text }}</p>
+    <div class="inner-box">
+        <p>{{ text }}</p>
     </div>
     {% endfor %}
     <h3>Interesting Phrases</h3>
     {% for example in examplehtml %}
-    <div style="padding: 10px; background-color: #EEE; margin: 20px">
-        <p style="font-size: 18px">{{ example["text"] }}</p>
-        <p style="text-align: right; font-size: 40px"> {{example ["title"]}} </p>
+    <div class="inner-box">
+        <p>{{ example["text"] }}</p>
+        <p class="normal-para"> {{example ["title"]}} </p>
     </div>
     {% endfor %}
 </div>
