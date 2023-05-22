@@ -7,21 +7,52 @@
     text-decoration: none;
 }
 
-/* a {
-    color: Black;
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    /*this is flexbox*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
 }
 
-body {
-    background-color: grey;
-    font-family: Helvetica, Arial, sans-serif;
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
 
-    line-height: 1.6em;
-} */
 .navbar {
-    font-family: Helvetica, Arial, sans-serif;
-
-    line-height: 1.6em;
+    display: flex;
 }
+
+.navbar a {
+    color: black;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid black;
+}
+
+#menu-icon {
+    color: black;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+
 
 
 

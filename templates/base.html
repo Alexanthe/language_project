@@ -24,7 +24,17 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <a href="#" class="logo"> BEE AI </a>
+
+        <ul class="navbar">
+            <li><a href="{{ url_for('home_page') }}"> Home </a></li>
+            <li><a href="{ url_for('about_page') }}"> About </a></li>
+            <li><a href="#"> Contact </a></li>
+        </ul>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <!-- <nav class="navbar">
             <a class="navbar-home" href="#">BeeAI</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -42,7 +52,8 @@
                     <a class="nav-link" href="#">Register</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
+
     </header>
     <hr>
     <div class="content">
