@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
-
+{%block title%} Home {% endblock %}
 {% block content %}
-<h1>{%block title%} {% endblock %}</h1>
 
 <div class="outer-box">
     <h2>Word of the day</h2>
-    <p> Published Date: {{ publishedhtml }} </p>
-    <div class="inner-box">
-        <p class="large-para">{{ wordhtml }}</p>
+    <h4> Published Date: {{ publishedhtml }} </h4>
+    <div class="word-of-day">
+        <p>{{ wordhtml }}</p>
     </div>
     <h3>Definition</h3>
     {% for text in texthtml %}
-    <div class="inner-box">
+    <div class="definitions">
         <p>{{ text }}</p>
     </div>
     {% endfor %}
     <h3>Interesting Phrases</h3>
     {% for example in examplehtml %}
-    <div class="inner-box">
+    <div class="phrases">
         <p>{{ example["text"] }}</p>
-        <p class="normal-para"> {{example ["title"]}} </p>
+        <p class="title">{{ example ["title"] }} </p>
     </div>
     {% endfor %}
 </div>
