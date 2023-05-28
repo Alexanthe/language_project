@@ -7,20 +7,22 @@
     text-decoration: none;
 }
 
-header {
+
+
+/* header {
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
-    /*this is flexbox*/
     align-items: center;
     justify-content: space-between;
     padding: 33px 9%;
     background: transparent;
-}
+} */
 
+/* 
 .logo {
     font-size: 30px;
     font-weight: 700;
@@ -59,7 +61,6 @@ header {
     background: linear-gradient(245.59deg, #FFFFff 0%, #f5ed00 28.53%, #666600 75.52%);
     position: relative;
     display: grid;
-    /* this is grid layout */
     align-items: center;
     padding: 7% 15%;
 }
@@ -134,4 +135,4 @@ header {
     font-size: 13px;
     padding-top: 2%;
 
-}
+} */
