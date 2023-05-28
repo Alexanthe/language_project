@@ -21,6 +21,7 @@ wordDict = getwordDict()
 
 def getWord (wordDict):
     word = wordDict["word"]
+    word = word.capitalize()
     
     return word
 
