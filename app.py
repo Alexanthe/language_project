@@ -9,8 +9,8 @@ def home_page():
     #Retrive WordDict
     wordDict = getwordDict()
     word = getWord(wordDict)
-    source, text  = getDefinitions(wordDict) #put source beside definition
-    example = getExamples(wordDict) #put title beside text. 
+    source, text  = getDefinitions(wordDict)
+    example = getExamples(wordDict)
     publishedDate = getpublishedDate(wordDict)
     return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example, publishedhtml = publishedDate) 
 
