@@ -14,9 +14,9 @@ def home_page():
     publishedDate = getpublishedDate(wordDict)
     return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example, publishedhtml = publishedDate) 
 
-@app.route("/about")
-def about_page():
-    return render_template("about.html")
+@app.route("/contact")
+def contact_page():
+    return render_template("contact.html")
 
 if (__name__) == "__main__":
     app.run()
