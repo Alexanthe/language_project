@@ -1,59 +1,80 @@
-# from curses import keyname
 import requests
-import api_key
 from datetime import date, timedelta
+import api_key
+import os
+import openai
 
 # from wordDictExample import *
 
-today = date.today()
 
-todayWordNik = today - timedelta(days=1)
+openai.api_key = api_key.openai_api_key
 
-query = {"date": todayWordNik, "api_key": api_key.api_key}
+word = "Obreptitious"
+def generate_prompt(word):
+    return """Write a 50 word narrative story for and with the word '{}'""".format(
+        word.capitalize()
+    )
+response = openai.Completion.create(
+            model="text-davinci-003",
+            prompt=generate_prompt(word),
+            max_tokens=200,
+            temperature=0.6,
+        )
+print(response)
+print(response.choices[0].text)
 
-response = requests.get(
-    "https://api.wordnik.com/v4/words.json/wordOfTheDay", params=query
-)
 
-wordDict = response.json()
+# today = date.today()
 
-## Get Word ####
-word = wordDict["word"]
+# todayWordNik = today - timedelta(days=1)
 
-print(word)
+# query = {"date": todayWordNik, "api_key": api_key.api_key}
 
-## Get Definitions ####
-definitions = []
-for each in wordDict["definitions"]:
-    definitions.append(each)
+# response = requests.get(
+#     "https://api.wordnik.com/v4/words.json/wordOfTheDay", params=query
+# )
 
-# Function to get the different sources and texts definitions (Might have multiple definitions)
-def getSpecificDef(definitions):
-    source = [] 
-    text = []
+# wordDict = response.json()
 
-    for each in definitions:
-        source.append(each["source"])
-        text.append(each["text"])
+# ## Get Word ####
+# word = wordDict["word"]
+
+# print(word)
+
+# ## Get Definitions ####
+# definitions = []
+# for each in wordDict["definitions"]:
+#     definitions.append(each)
+
+# # Function to get the different sources and texts definitions (Might have multiple definitions)
+# def getSpecificDef(definitions):
+#     source = [] 
+#     text = []
+
+#     for each in definitions:
+#         source.append(each["source"])
+#         text.append(each["text"])
     
-    return source,text
+#     return source,text
 
-source,text = getSpecificDef(definitions)
+# source,text = getSpecificDef(definitions)
 
 
 
-## Get Examples ####
-examples = []
-for each in wordDict["examples"]:
-    examples.append(each)
+# ## Get Examples ####
+# examples = []
+# for each in wordDict["examples"]:
+#     examples.append(each)
 
-print(len(examples)) # Cam create a py function to just get specific dictionary key values such as "text"
+# print(len(examples)) # Cam create a py function to just get specific dictionary key values such as "text"
 
-## Get Published Dates ####
-publishedDate = wordDict["pdd"]
+# ## Get Published Dates ####
+# publishedDate = wordDict["pdd"]
 
-## Get Note ####
-note = wordDict["note"]
+# ## Get Note ####
+# note = wordDict["note"]
+
+###########################################################################
 
 ## Using a different query api type ####
 # query = {
