@@ -7,7 +7,7 @@ def getwordDict():
 
     todayWordNik = today - timedelta(days=1)
 
-    query = {"date": todayWordNik, "api_key": api_key.api_key}
+    query = {"date": todayWordNik, "api_key": api_key.wordnik_api_key}
 
     response = requests.get(
         "https://api.wordnik.com/v4/words.json/wordOfTheDay", params=query
