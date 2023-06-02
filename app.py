@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from beeai import *
 
 app = Flask(__name__)
@@ -16,7 +16,8 @@ def home_page():
 
 @app.route("/contact")
 def contact_page():
-    return render_template("contact.html")
+    path = request.path
+    return render_template("contact.html", currentpath = path)
 
 if (__name__) == "__main__":
     app.run()
