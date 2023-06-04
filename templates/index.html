@@ -6,7 +6,11 @@
     <div class="container">
         <div>
             <h1 class="mb-5">Word of the day</h1>
-            <h2>{{ wordhtml }}</h2>
+
+            <div id="typed-word">
+                <h2>{{ wordhtml }}</h2>
+            </div>
+            <h2><span id="word"></span></h2>
         </div>
     </div>
 </section>
@@ -31,6 +35,20 @@
         </div>
     </div>
 </section>
+
+<section class="bg-dark text-light text-center p-5">
+    <div class="container">
+        <div>
+            <h2>Write a <span class="text-warning" id="promptoptions"></span> sentence on the word
+                "<span class="text-warning">{{ wordhtml }}</span>" </h2>
+            <div class="text-center pt-2 ">
+                <button type="button" class="btn btn-warning btn-lg">Get Started</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section id="phrases" class="bg-warning text-dark">
     <div class="container">
@@ -70,31 +88,26 @@
             </div>
             <img class="img-fluid w-50 d-none d-sm-block" src="static/img/bee_hive.svg" alt="Bee Hive">
         </div>
-
     </div>
 
 </section>
 
+<script>
+    var typed = new Typed('#word', {
+        stringsElement: '#typed-word',
+        typeSpeed: 100,
+    });
+</script>
 
-<div class="outer-box">
-    <h1>Word of the day</h1>
-    <h4> Published Date: {{ publishedhtml }} </h4>
-    <div class="word-of-day">
-        <p>{{ wordhtml }}</p>
-    </div>
-    <h3>Definition</h3>
-    {% for text in texthtml %}
-    <div class="definitions">
-        <p>{{ text }}</p>
-    </div>
-    {% endfor %}
-    <h3>Interesting Phrases</h3>
-    {% for example in examplehtml %}
-    <div class="phrases">
-        <p>{{ example["text"] }}</p>
-        <p class="title">{{ example ["title"] }} </p>
-    </div>
-    {% endfor %}
-</div>
+<script>
+    var typed = new Typed('#promptoptions', {
+        strings: ["descriptive", "narrative"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 500,
+        startDelay: 1000,
+        loop: true
+    });
+</script>
 
 {% endblock %}
