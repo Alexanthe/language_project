@@ -14,7 +14,7 @@ const secondFunc = () => { // This does not need to be async
         strings: ["descriptive", "narrative"],
         typeSpeed: 100,
         backSpeed: 100,
-        backDelay: 500,
+        backDelay: 1500,
         startDelay: 500,
         showCursor: true,
         loop: true
