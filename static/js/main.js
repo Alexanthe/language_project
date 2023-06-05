@@ -1,12 +1,9 @@
 const wait = (t) => new Promise((r) => setTimeout(r, t));
 
 const firstFunc = async () => {
-    var typed = new Typed('#promptoptions', {
-        strings: ["descriptive"],
+    var typed = new Typed('#word', {
+        stringsElement: '#typed-word',
         typeSpeed: 100,
-        backSpeed: 100,
-        backDelay: 500,
-        startDelay: 2500,
         showCursor: false
     });
     await wait(5000); // Just to fake some wait time
@@ -19,7 +16,7 @@ const secondFunc = () => { // This does not need to be async
         backSpeed: 100,
         backDelay: 500,
         startDelay: 500,
-        showCursor: false,
+        showCursor: true,
         loop: true
     });
 }
