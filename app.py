@@ -19,5 +19,10 @@ def contact_page():
     path = request.path
     return render_template("contact.html", currentpath = path)
 
+@app.route("/hive")
+def hive_page():
+    path = request.path
+    return render_template("hive.html", currentpath = path)
+
 if (__name__) == "__main__":
     app.run()

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Hive {% endblock %}
+
+{% block content %}
+
+<section class="p-5">
+    <div class="container">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Magical Bee</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="text-center pt-2 ">
+        <!-- <button type="button" class="btn btn-outline-warning">Generate</button> -->
+        <a href="{{ url_for('hive_page') }}" class="btn btn-outline-warning" role="button">Generate</a>
+    </div>
+</section>
+{% endblock %}
