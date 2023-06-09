@@ -1,6 +1,21 @@
 import requests
 import api_key
 from datetime import date, timedelta
+import openai
+
+def generateHive(word):
+    openai.api_key = api_key.openai_api_key
+    response = openai.Completion.create(
+            model="text-davinci-003",
+            prompt= """Write a 50 word narrative story for and with the word '{}'""".format(
+        word.capitalize()),
+            max_tokens=200,
+            temperature=0.6,
+        )
+    
+    # print(response.choices[0].text)
+    return response.choices[0].text
+    
 
 def getwordDict():
     today = date.today()

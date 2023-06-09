@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import api_key
 import os
 import openai
+import beeai
 
 # from wordDictExample import *
 
@@ -10,18 +11,20 @@ import openai
 openai.api_key = api_key.openai_api_key
 
 word = "Obreptitious"
-def generate_prompt(word):
-    return """Write a 50 word narrative story for and with the word '{}'""".format(
-        word.capitalize()
-    )
-response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=generate_prompt(word),
-            max_tokens=200,
-            temperature=0.6,
-        )
-print(response)
-print(response.choices[0].text)
+beeai.generateHive(word)
+
+# def generate_prompt(word):
+#     return """Write a 50 word narrative story for and with the word '{}'""".format(
+#         word.capitalize()
+#     )
+# response = openai.Completion.create(
+#             model="text-davinci-003",
+#             prompt=generate_prompt(word),
+#             max_tokens=200,
+#             temperature=0.6,
+#         )
+# print(response)
+# print(response.choices[0].text)
 
 
 # today = date.today()

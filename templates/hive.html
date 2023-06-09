@@ -8,12 +8,16 @@
     <div class="container">
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Magical Bee</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <!-- <textarea id="response" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+            <p id="response"></p>
         </div>
     </div>
     <div class="text-center pt-2 ">
-        <!-- <button type="button" class="btn btn-outline-warning">Generate</button> -->
-        <a href="{{ url_for('hive_page') }}" class="btn btn-outline-warning" role="button">Generate</a>
+        <!-- <button type="button" class="btn btn-outline-warning" onclick="fun()">Generate</button> -->
+        <a href="{{ url_for('hive_page') }}" class="btn btn-outline-warning" role="button"
+            onclick="runPythonFunction()">Generate</a>
     </div>
 </section>
+
+<script src="static/js/main.js"></script>
 {% endblock %}
