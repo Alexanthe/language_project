@@ -27,18 +27,3 @@ const run2functions = async () => {
 };
 
 run2functions();
-
-
-function runPythonFunction() {
-    // ajax request to run python function
-    $.ajax({
-        type: "POST",
-        url: "/../../beeai.py",
-        data: { function_name: "generateHive" },
-        success: function (response) {
-            // display response on page
-            $('#response').text('Python function ran successfully with response: ' + response);
-            console.log("Python function ran successfully with response: " + response);
-        }
-    });
-}

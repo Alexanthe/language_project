@@ -19,9 +19,14 @@ def contact_page():
     path = request.path
     return render_template("contact.html", currentpath = path)
 
-@app.route("/hive")
+@app.route("/hive",methods=["GET", "POST"])
 def hive_page():
     path = request.path
+    if request.method=="POST":
+        wordDict = getwordDict()
+        word = getWord(wordDict)
+        hiveText = generateHive(word)
+        return render_template("hive.html", currentpath = path, hive = hiveText)
     return render_template("hive.html", currentpath = path)
 
 if (__name__) == "__main__":
