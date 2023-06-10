@@ -6,17 +6,17 @@
 
 <section class="p-5">
     <div class="container">
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Magical Bee</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{hive}}</textarea>
+        <div class="card bg-dark text-light mb-5">
+            <div class="card-body">
+                <p class="card-text p-5">{{ hive }}
+                </p>
+            </div>
         </div>
     </div>
     <div class="text-center pt-2 ">
         <form method="post">
-            <input type="Submit" value="Generate">
+            <input type="Submit" class="btn btn-warning" value="Generate">
         </form>
     </div>
 </section>
-
-<script src="static/js/main.js"></script>
 {% endblock %}
