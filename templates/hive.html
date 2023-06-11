@@ -6,10 +6,14 @@
 
 <section class="p-5">
     <div class="container">
-        <div class="card bg-dark text-light mb-5">
+        <div class="card bg-dark text-light">
             <div class="card-body">
-                <p class="card-text p-5">{{ hive }}
-                </p>
+
+                <div id="typed-para">
+                    <p>{{ hive }}</p>
+                </div>
+                <p class="text-center p-3"><span id="para"></span></p>
+
             </div>
         </div>
     </div>
@@ -19,4 +23,7 @@
         </form>
     </div>
 </section>
+
+<script src="static/js/hiveTyped.js"></script>
+
 {% endblock %}

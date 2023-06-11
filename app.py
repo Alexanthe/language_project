@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from markupsafe import Markup
 from beeai import *
 
 app = Flask(__name__)
@@ -26,7 +27,8 @@ def hive_page():
         wordDict = getwordDict()
         word = getWord(wordDict)
         hiveText = generateHive(word)
-        return render_template("hive.html", currentpath = path, hive = hiveText)
+        data = Markup(hiveText.replace(word, "<mark>"+word+"</mark>"))
+        return render_template("hive.html", currentpath = path, hive = data)
     return render_template("hive.html", currentpath = path)
 
 if (__name__) == "__main__":
