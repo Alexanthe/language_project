@@ -43,7 +43,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <!-- check path to ensure seamless transition with jinja's url_for and html's id-->
-                        {% if currentpath == "/contact" %}
+                        {% if (currentpath == "/contact") or (currentpath == "/hive") %}
                         <li class="nav-item">
                             <a class="nav-link active" href="/#">Home</a>
                         </li>
