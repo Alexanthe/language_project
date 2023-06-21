@@ -12,6 +12,12 @@ def home_page():
     word = getWord(wordDict)
     source, text  = getDefinitions(wordDict)
     example = getExamples(wordDict)
+    
+    # for eg in example:
+    #     eg["text"] = Markup(eg["text"].replace(word, "<mark>"+word+"</mark>"))
+
+    print(example)
+
     publishedDate = getpublishedDate(wordDict)
     return render_template("index.html", wordhtml = word, texthtml = text, examplehtml = example, publishedhtml = publishedDate) 
 
