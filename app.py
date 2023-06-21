@@ -24,11 +24,22 @@ def contact_page():
 def hive_page():
     path = request.path
     if request.method=="POST":
+
+        # getting input from html
+        numOfWords = request.form.get("numofwords")
+        # getting input from html        
+        style = request.form.get("style")
+
+        # getting word from api
         wordDict = getwordDict()
         word = getWord(wordDict)
-        hiveText = generateHive(word)
+
+        prompt = generate_prompt(word, numOfWords, style)
+        hiveText = generateHive(prompt)
+
         data = Markup(hiveText.replace(word, "<mark>"+word+"</mark>"))
-        return render_template("hive.html", currentpath = path, hive = data)
+        
+        return render_template("hive.html", currentpath = path, hive = data, prompt = prompt)
     return render_template("hive.html", currentpath = path)
 
 if (__name__) == "__main__":

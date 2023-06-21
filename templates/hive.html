@@ -5,8 +5,42 @@
 {% block content %}
 
 <section class="p-5">
+
     <div class="container">
+        <form method="post">
+            <div class="row g-3">
+
+                <div class="col">
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" name="numofwords">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <label for="floatingSelect">Number of Words</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" name="style">
+                            <option value="expository ">Expository</option>
+                            <option value="narrative">Narrative</option>
+                            <option value="descriptive">Descriptive</option>
+                            <option value="persuasive">Persuasive</option>
+                        </select>
+                        <label for="floatingSelect">Style</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center pt-2 ">
+
+                <input type="Submit" class="btn btn-warning" value="Generate">
+
+            </div>
+        </form>
         <div class="card bg-dark text-light">
+
             <div class="card-body">
 
                 <div id="typed-para">
@@ -17,11 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center pt-2 ">
-        <form method="post">
-            <input type="Submit" class="btn btn-warning" value="Generate">
-        </form>
-    </div>
+    <p>{{prompt}}</p>
 </section>
 
 <script src="static/js/hiveTyped.js"></script>

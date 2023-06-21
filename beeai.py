@@ -3,12 +3,14 @@ import api_key
 from datetime import date, timedelta
 import openai
 
-def generateHive(word):
+def generate_prompt(word, number, style):
+    return """Write a {num} word {sty} story for and with the word '{wor}'""".format( wor=word.capitalize(), num=number,sty=style)
+
+def generateHive(prompt):
     openai.api_key = api_key.openai_api_key
     response = openai.Completion.create(
             model="text-davinci-003",
-            prompt= """Write a 50 word narrative story for and with the word '{}'""".format(
-        word.capitalize()),
+            prompt=prompt,
             max_tokens=200,
             temperature=0.6,
         )
